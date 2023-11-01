@@ -59,8 +59,6 @@ fun WearApp(greetingName: String) {
 
 @Composable
 fun RetireIn(retireAge: Int) {
-    // TODO: Calculate how long until retirement
-
     val bday = LocalDate.of(
         integerResource(id = R.integer.dob_year),
         integerResource(R.integer.dob_month),

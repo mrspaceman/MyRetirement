@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Retirement</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">From the Square world,\nHello, %1$s!</string>
+    <string name="tile_label">Example tile</string>
+    <string name="title_activity_presentation._main">presentation.MainActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="complication_label">Example complication</string>
+    <string name="retire_in">Retire on\n%5$s\n%1$s yrs, %2$s mnths\nand %3$s days\nat age %4$s</string>
+</resources>

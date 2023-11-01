@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="retirement_age">60</integer>
+    <integer name="dob_year">1969</integer>
+    <integer name="dob_month">8</integer>
+    <integer name="dob_day">27</integer>
+</resources>

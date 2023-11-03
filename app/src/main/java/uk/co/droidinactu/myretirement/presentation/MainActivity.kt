@@ -82,14 +82,6 @@ fun TextItem(modifier: Modifier = Modifier, contents: String) {
         textAlign = TextAlign.Center,
         text = contents,
     )
-//    Text(
-//        modifier = Modifier
-//            .background(MaterialTheme.colors.background)
-//            .padding(2.dp)
-//            .border(1.dp, Color.LightGray),
-//        textAlign = TextAlign.Center,
-//        text = contents,
-//    )
 }
 
 @Composable
@@ -106,7 +98,7 @@ fun setupList(): MutableList<String> {
     return mutableListOf<String>(
         getEvent(Event("XMas", dateOfBirth, LocalDate.of(2023, 12, 25))),
         getEvent(Event("Holiday", dateOfBirth, LocalDate.of(2024, 1, 4))),
-        getEvent(Event("Retire", dateOfBirth, dateOfBirth.plusYears(ageAtEvent))),
+        getEvent(Event("Retire", dateOfBirth, dateOfBirth.plusYears(ageAtEvent), true)),
     ) // .sortedBy { it }
 }
 
@@ -121,15 +113,25 @@ fun getEvent(event: Event): String {
     val months = timeToGo.months
     val days = timeToGo.days
 
-    return stringResource(
-        R.string.event_in,
-        years,
-        months,
-        days,
-        ageAtEvent,
-        event.date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")),
-        event.name,
-    )
+    if (event.sh) {
+        return stringResource(
+            R.string.event_in,
+            years,
+            months,
+            days,
+            ageAtEvent,
+            event.date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")),
+            event.name,
+        )
+    }else{
+        return stringResource(
+            R.string.event_in_no_age,
+            years,
+            months,
+            days,
+            event.date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")),
+            event.name,
+    }
 }
 
 @Preview(device = Devices.WEAR_OS_SMALL_ROUND, showSystemUi = true)

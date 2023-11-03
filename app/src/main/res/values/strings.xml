@@ -10,6 +10,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="complication_label">Example complication</string>
     <string name="event_in">%6$s on\n%5$s\n%1$s yrs, %2$s mnths\nand %3$s days\nat age %4$s</string>
+    <string name="event_in_no_age">%5$s on\n%4$s\n%1$s yrs, %2$s mnths\nand %3$s days</string>
 
     <string name="preference_file_key">EventCountdown</string>
 </resources>

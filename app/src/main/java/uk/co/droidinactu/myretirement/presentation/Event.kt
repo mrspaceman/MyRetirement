@@ -6,5 +6,5 @@ data class Event(
     val name: String,
     val dob: LocalDate,
     val date: LocalDate,
-    val showAge = false,
+    val showAge: Boolean = false,
 )

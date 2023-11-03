@@ -113,7 +113,7 @@ fun getEvent(event: Event): String {
     val months = timeToGo.months
     val days = timeToGo.days
 
-    if (event.sh) {
+    if (event.showAge) {
         return stringResource(
             R.string.event_in,
             years,
@@ -123,15 +123,15 @@ fun getEvent(event: Event): String {
             event.date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")),
             event.name,
         )
-    }else{
-        return stringResource(
-            R.string.event_in_no_age,
-            years,
-            months,
-            days,
-            event.date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")),
-            event.name,
     }
+    return stringResource(
+        R.string.event_in_no_age,
+        years,
+        months,
+        days,
+        event.date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")),
+        event.name,
+    )
 }
 
 @Preview(device = Devices.WEAR_OS_SMALL_ROUND, showSystemUi = true)

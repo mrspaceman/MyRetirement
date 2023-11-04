@@ -75,10 +75,10 @@ fun TextItem(modifier: Modifier = Modifier, contents: String) {
     val shape = CircleShape
     Text(
         modifier = Modifier.fillMaxWidth()
-            .padding(2.dp)
+            .padding(12.dp)
             .border(2.dp, MaterialTheme.colors.secondary, shape)
             .background(MaterialTheme.colors.background, shape)
-            .padding(2.dp),
+            .padding(24.dp),
         textAlign = TextAlign.Center,
         text = contents,
     )
@@ -95,11 +95,15 @@ fun setupList(): MutableList<String> {
         integerResource(R.integer.dob_day),
     )
 
-    return mutableListOf<String>(
-        getEvent(Event("XMas", dateOfBirth, LocalDate.of(2023, 12, 25))),
-        getEvent(Event("Holiday", dateOfBirth, LocalDate.of(2024, 1, 4))),
-        getEvent(Event("Retire", dateOfBirth, dateOfBirth.plusYears(ageAtEvent), true)),
-    ) // .sortedBy { it }
+    var eventList = mutableListOf<Event>(
+        Event("XMas", dateOfBirth, LocalDate.of(2024, 12, 25)),
+        Event("XMas", dateOfBirth, LocalDate.of(2023, 12, 25)),
+        Event("Birthday", dateOfBirth, LocalDate.of(2024, 3, 27)),
+    ).sortedWith(compareBy({ it.date }))
+
+    var events = mutableListOf<String>()
+    eventList.forEach { it -> events.add(getEvent(event = it)) }
+    return events
 }
 
 @Composable

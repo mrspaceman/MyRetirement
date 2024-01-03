@@ -1,3 +1,3 @@
-# MyRetirement
+# Event Countdown App
 
-This is a simple android wear app that shows the number of years, months and days until retirement
+This is a simple app to show how long there is until an event

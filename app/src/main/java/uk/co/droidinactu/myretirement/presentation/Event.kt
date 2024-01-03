@@ -4,7 +4,8 @@ import java.time.LocalDate
 
 data class Event(
     val name: String,
-    val dob: LocalDate,
-    val date: LocalDate,
+    val date: LocalDate? = null,
+    val dob: LocalDate? = null,
+    val ageAtEvent: Int? = null,
     val showAge: Boolean = false,
 )
